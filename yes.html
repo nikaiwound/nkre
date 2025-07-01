@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You're Sweet!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="center">
+    <h1>Hehe 😳</h1>
+    <p><span id="nameSpan"></span>, bal-an ko man, first move una kay torpe ko.</p>
+    <img src="your-image.jpg" alt="Sweet Image" width="300">
+    <video controls width="300">
+      <source src="your-video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </div>
+
+  <script>
+    const name = localStorage.getItem("userName");
+    document.getElementById("nameSpan").textContent = name ? name : "crush";
+    console.log("Someone visited and entered the name:", name);  // logs to browser
+  </script>
+
+<audio autoplay loop id="bgMusic" style="display:none">
+  <source src="background-music.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic) {{
+      bgMusic.volume = 0.4; // 40% volume
+    }}
+  });
+</script>
+
+</body>
+</html>

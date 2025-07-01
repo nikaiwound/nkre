@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="center">
+    <h2>Crush moko? Ma first move ko, indi?</h2>
+    <button id="yesBtn" onclick="goToYes()">Yes ❤️</button>
+    <button id="noBtn">No 😅</button>
+  </div>
+  <script src="script.js"></script>
+
+<audio autoplay loop id="bgMusic" style="display:none">
+  <source src="background-music.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic) {{
+      bgMusic.volume = 0.4; // 40% volume
+    }}
+  });
+</script>
+
+</body>
+</html>

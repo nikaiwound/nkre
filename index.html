@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="center">
+    <h2>Welcome! 💌</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="login()">Log In</button>
+  </div>
+
+  <script>
+    function login() {
+      const name = document.getElementById('nameInput').value;
+      if (name.trim() !== "") {
+        localStorage.setItem("userName", name);
+        // Send name to webhook
+        fetch("https://webhook.site/178a59a6-e464-4442-9ef1-ff9e380cd0de", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ name: name })
+        });
+        window.location.href = "question.html";
+      } else {
+        alert("Please enter your name!");
+      }
+    }
+  </script>
+
+<audio autoplay loop id="bgMusic" style="display:none">
+  <source src="background-music.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic) {{
+      bgMusic.volume = 0.4; // 40% volume
+    }}
+  });
+</script>
+
+</body>
+</html>
